@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RUNGG VASTU — Premium Vastu & Industrial Vastu Consulting</title>
   <meta name="description" content="Disha Badlo. Dasha Badlegi. Premium Vastu, Industrial Vastu and Numerology consulting by Dinnna N. Satra — practical alignment for homes, businesses and industries. Vastu without demolition." />
-  <meta name="theme-color" content="#FFFDF8" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F3D2E'/%3E%3Crect x='10' y='10' width='12' height='12' fill='none' stroke='%23F5E7C5' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#0B2E22" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B2E22'/%3E%3Crect x='10' y='10' width='12' height='12' fill='none' stroke='%23E4B756' stroke-width='1.5'/%3E%3Cpath d='M16 4v4M16 24v4M4 16h4M24 16h4' stroke='%23E4B756' stroke-width='1.5'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <noscript><style>
     [data-reveal], .wi { opacity: 1 !important; transform: none !important; }
     [data-draw] * { stroke-dashoffset: 0 !important; }
@@ -20,26 +20,68 @@
 </head>
 <body>
 
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
   <div class="cursor" aria-hidden="true"><span></span></div>
 
   <header class="nav" id="nav">
-    <a class="nav__wordmark" href="#hero">RUNGG&nbsp;VASTU</a>
+    <a class="nav__wordmark" href="#hero">
+      <span class="nav__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="8.5" y="8.5" width="15" height="15" stroke="currentColor" stroke-width="1.4"/><path d="M16 2.5v4M16 25.5v4M2.5 16h4M25.5 16h4" stroke="currentColor" stroke-width="1.4"/><rect x="13.5" y="13.5" width="5" height="5" fill="currentColor"/></svg>
+      </span>
+      RUNGG&nbsp;VASTU
+    </a>
     <nav class="nav__links" aria-label="Rooms of the experience">
       <a href="#premise"><span>01</span>Philosophy</a>
       <a href="#founder"><span>02</span>Founder</a>
       <a href="#wd"><span>03</span>Difference</a>
       <a href="#services"><span>04</span>Services</a>
-      <a href="#process"><span>05</span>Process</a>
-      <a href="#testimonials"><span>06</span>Stories</a>
-      <a href="#contact"><span>07</span>Contact</a>
+      <a href="#directions"><span>05</span>Directions</a>
+      <a href="#number"><span>06</span>Numbers</a>
+      <a href="#process"><span>07</span>Process</a>
+      <a href="#testimonials"><span>08</span>Stories</a>
     </nav>
-    <a class="nav__cta" href="#contact">Book Consultation</a>
+    <div class="nav__right">
+      <a class="nav__cta" href="#contact">Book Consultation</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-sheet">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
+
+  <div class="sheet" id="nav-sheet" hidden>
+    <nav class="sheet__links" aria-label="Mobile">
+      <a href="#premise"><span>01</span>Philosophy</a>
+      <a href="#founder"><span>02</span>Founder</a>
+      <a href="#wd"><span>03</span>Difference</a>
+      <a href="#services"><span>04</span>Services</a>
+      <a href="#directions"><span>05</span>Directions</a>
+      <a href="#number"><span>06</span>Numbers</a>
+      <a href="#process"><span>07</span>Process</a>
+      <a href="#testimonials"><span>08</span>Stories</a>
+      <a href="#contact"><span>09</span>Contact</a>
+    </nav>
+    <p class="sheet__mantra">दिशा बदलो · दशा बदलेगी</p>
+  </div>
 
   <main>
 
     <!-- ──────────────── 01 · WHO ARE YOU? ──────────────── -->
     <section class="scene hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__grid"></span>
+        <svg class="hero__mandala" viewBox="0 0 600 600" fill="none">
+          <g stroke="#E4B756" stroke-opacity="0.2">
+            <circle cx="300" cy="300" r="290"/><circle cx="300" cy="300" r="232"/>
+            <circle cx="300" cy="300" r="174"/><circle cx="300" cy="300" r="116"/>
+            <path d="M300 10 L590 300 L300 590 L10 300 Z"/>
+            <rect x="88" y="88" width="424" height="424"/>
+            <rect x="88" y="88" width="424" height="424" transform="rotate(45 300 300)"/>
+          </g>
+        </svg>
+        <span class="hero__orb hero__orb--1"></span>
+        <span class="hero__orb hero__orb--2"></span>
+      </div>
+
       <div class="hero__content">
         <p class="hero__deva" data-reveal>वास्तु · अंक ज्योतिष · दिशा विज्ञान</p>
         <p class="kicker" data-reveal>Premium Vastu · Industrial Vastu · Numerology</p>
@@ -47,61 +89,71 @@
         <p class="hero__tagline" data-reveal>दिशा बदलो · दशा बदलेगी</p>
         <p class="hero__sub" data-reveal>Vastu for homes, businesses and industries — practical alignment, without demolition.</p>
         <div class="hero__actions" data-reveal>
-          <a class="btn btn--solid" href="#contact">Book Consultation</a>
-          <a class="btn btn--ghost" href="#services">Explore Services</a>
+          <a class="btn btn--gold" href="#contact">Book Consultation</a>
+          <a class="btn btn--line" href="#services">Explore Services</a>
         </div>
+        <ul class="hero__trust" data-reveal>
+          <li>15+ years</li>
+          <li>500+ consultations</li>
+          <li>Zero demolition</li>
+        </ul>
       </div>
 
       <div class="hero__figure" aria-hidden="true">
         <svg class="hero__day" viewBox="0 0 800 500" fill="none" preserveAspectRatio="xMidYMid meet">
           <defs>
             <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#C79A3B" stop-opacity="0.35"/>
-              <stop offset="55%" stop-color="#C79A3B" stop-opacity="0.12"/>
-              <stop offset="100%" stop-color="#C79A3B" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#E4B756" stop-opacity="0.5"/>
+              <stop offset="55%" stop-color="#E4B756" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="#E4B756" stop-opacity="0"/>
             </radialGradient>
+            <linearGradient id="planInk" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F5E7C5" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#E4B756" stop-opacity="0.55"/>
+            </linearGradient>
           </defs>
 
-          <circle class="glow" cx="400" cy="250" r="200" fill="url(#sunGlow)"/>
+          <circle class="glow" cx="400" cy="250" r="230" fill="url(#sunGlow)"/>
 
           <g class="plan-draw" data-delay="0.3">
-            <line x1="400" y1="60" x2="400" y2="470" stroke="#C79A3B" stroke-opacity="0.22" stroke-width="0.8"/>
+            <line x1="400" y1="60" x2="400" y2="470" stroke="#E4B756" stroke-opacity="0.3" stroke-width="0.8"/>
           </g>
 
           <g class="plan-draw" data-delay="0.5">
-            <rect x="220" y="70" width="360" height="360" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.4"/>
+            <rect x="220" y="70" width="360" height="360" stroke="url(#planInk)" stroke-opacity="0.85" stroke-width="1.6"/>
           </g>
 
           <g class="plan-draw" data-delay="0.7">
-            <line x1="340" y1="70" x2="340" y2="430" stroke="#0F3D2E" stroke-opacity="0.16" stroke-width="0.8"/>
-            <line x1="460" y1="70" x2="460" y2="430" stroke="#0F3D2E" stroke-opacity="0.16" stroke-width="0.8"/>
-            <line x1="220" y1="190" x2="580" y2="190" stroke="#0F3D2E" stroke-opacity="0.16" stroke-width="0.8"/>
-            <line x1="220" y1="310" x2="580" y2="310" stroke="#0F3D2E" stroke-opacity="0.16" stroke-width="0.8"/>
-            <line x1="220" y1="310" x2="340" y2="310" stroke="#0F3D2E" stroke-opacity="0.3" stroke-width="0.9"/>
-            <line x1="460" y1="70" x2="460" y2="190" stroke="#0F3D2E" stroke-opacity="0.3" stroke-width="0.9"/>
-            <path d="M378 430 A 22 22 0 0 1 422 430" stroke="#0F3D2E" stroke-opacity="0.5" stroke-width="1.1"/>
-            <path d="M580 250 A 22 22 0 0 0 580 294" stroke="#0F3D2E" stroke-opacity="0.4" stroke-width="1.1"/>
-            <line x1="340" y1="70" x2="340" y2="84" stroke="#0F3D2E" stroke-opacity="0.45" stroke-width="0.9"/>
-            <line x1="370" y1="70" x2="370" y2="84" stroke="#0F3D2E" stroke-opacity="0.45" stroke-width="0.9"/>
-            <line x1="430" y1="70" x2="430" y2="84" stroke="#0F3D2E" stroke-opacity="0.45" stroke-width="0.9"/>
-            <line x1="460" y1="70" x2="460" y2="84" stroke="#0F3D2E" stroke-opacity="0.45" stroke-width="0.9"/>
+            <line x1="340" y1="70" x2="340" y2="430" stroke="#F5E7C5" stroke-opacity="0.3" stroke-width="0.8"/>
+            <line x1="460" y1="70" x2="460" y2="430" stroke="#F5E7C5" stroke-opacity="0.3" stroke-width="0.8"/>
+            <line x1="220" y1="190" x2="580" y2="190" stroke="#F5E7C5" stroke-opacity="0.3" stroke-width="0.8"/>
+            <line x1="220" y1="310" x2="580" y2="310" stroke="#F5E7C5" stroke-opacity="0.3" stroke-width="0.8"/>
+            <line x1="220" y1="310" x2="340" y2="310" stroke="#E4B756" stroke-opacity="0.5" stroke-width="0.9"/>
+            <line x1="460" y1="70" x2="460" y2="190" stroke="#E4B756" stroke-opacity="0.5" stroke-width="0.9"/>
+            <path d="M378 430 A 22 22 0 0 1 422 430" stroke="#F5E7C5" stroke-opacity="0.6" stroke-width="1.1"/>
+            <path d="M580 250 A 22 22 0 0 0 580 294" stroke="#F5E7C5" stroke-opacity="0.5" stroke-width="1.1"/>
+            <line x1="340" y1="70" x2="340" y2="84" stroke="#E4B756" stroke-opacity="0.7" stroke-width="0.9"/>
+            <line x1="370" y1="70" x2="370" y2="84" stroke="#E4B756" stroke-opacity="0.7" stroke-width="0.9"/>
+            <line x1="430" y1="70" x2="430" y2="84" stroke="#E4B756" stroke-opacity="0.7" stroke-width="0.9"/>
+            <line x1="460" y1="70" x2="460" y2="84" stroke="#E4B756" stroke-opacity="0.7" stroke-width="0.9"/>
           </g>
 
           <g class="plan-draw" data-delay="0.9">
-            <rect x="340" y="190" width="120" height="120" stroke="#C79A3B" stroke-opacity="0.7" stroke-width="1.2"/>
+            <rect x="340" y="190" width="120" height="120" stroke="#E4B756" stroke-opacity="0.95" stroke-width="1.4" fill="#E4B756" fill-opacity="0.07"/>
+            <text x="400" y="256" text-anchor="middle" class="day-lab day-lab--gold" style="font-size:11px">BRAHMSTHAN</text>
           </g>
 
           <g class="plan-draw" data-delay="1.2">
-            <path class="day-arc" d="M690 460 Q 400 30 110 460" stroke="#C79A3B" stroke-opacity="0.45" stroke-width="1.1"/>
-            <text x="700" y="484" text-anchor="middle" class="day-lab">E</text>
-            <text x="100" y="484" text-anchor="middle" class="day-lab">W</text>
-            <text x="400" y="50" text-anchor="middle" class="day-lab day-lab--gold">N</text>
+            <path class="day-arc" d="M604 448 Q 400 62 196 448" stroke="#E4B756" stroke-opacity="0.6" stroke-width="1.1"/>
+            <text x="616" y="472" text-anchor="middle" class="day-lab">E</text>
+            <text x="184" y="472" text-anchor="middle" class="day-lab">W</text>
+            <text x="400" y="44" text-anchor="middle" class="day-lab day-lab--gold">N</text>
           </g>
 
           <g class="plan-draw" data-delay="1.4">
-            <animateMotion dur="42s" repeatCount="indefinite" path="M690 460 Q 400 30 110 460"/>
-            <circle cx="0" cy="0" r="42" fill="url(#sunGlow)"/>
-            <circle cx="0" cy="0" r="4.5" fill="#C79A3B"/>
+            <animateMotion dur="42s" repeatCount="indefinite" path="M604 448 Q 400 62 196 448"/>
+            <circle cx="0" cy="0" r="52" fill="url(#sunGlow)"/>
+            <circle cx="0" cy="0" r="5" fill="#E4B756"/>
           </g>
         </svg>
       </div>
@@ -113,15 +165,19 @@
 
       <div class="facts" id="facts" aria-label="The studio in numbers">
         <div class="fact" data-reveal>
-          <span class="fact__num">15+</span>
+          <span class="fact__num" data-count="15" data-suffix="+">15+</span>
           <span class="fact__label">Years of practice</span>
         </div>
         <div class="fact" data-reveal>
-          <span class="fact__num">500+</span>
+          <span class="fact__num" data-count="500" data-suffix="+">500+</span>
           <span class="fact__label">Global consultations</span>
         </div>
         <div class="fact" data-reveal>
-          <span class="fact__num">0</span>
+          <span class="fact__num" data-count="8" data-suffix="">8</span>
+          <span class="fact__label">Directions read</span>
+        </div>
+        <div class="fact" data-reveal>
+          <span class="fact__num" data-count="0" data-suffix="">0</span>
           <span class="fact__label">Walls demolished</span>
         </div>
       </div>
@@ -186,7 +242,7 @@
     <!-- ──────────────── 04 · WHY ARE YOU DIFFERENT? ──────────────── -->
     <section class="scene wd" id="wd">
       <header class="scene-head" data-reveal>
-        <span class="scene-head__no">02</span>
+        <span class="scene-head__no">03</span>
         <h2 class="scene-head__title">Vastu without demolition.</h2>
         <p class="scene-head__lede">A building is a promise to its owners. We never break it. Alignment is achieved through placement, position and timing — never construction.</p>
       </header>
@@ -205,17 +261,19 @@
           <figure class="alignment__figure" aria-hidden="true">
             <svg viewBox="0 0 400 400" fill="none">
               <g class="alg-aligned">
-                <rect x="70" y="70" width="260" height="260" stroke="#0F3D2E" stroke-opacity="0.75" stroke-width="1.25"/>
-                <line x1="200" y1="70" x2="200" y2="330" stroke="#C79A3B" stroke-opacity="0.5" stroke-width="0.75"/>
-                <line x1="70" y1="200" x2="330" y2="200" stroke="#C79A3B" stroke-opacity="0.5" stroke-width="0.75"/>
+                <rect x="70" y="70" width="260" height="260" stroke="#E4B756" stroke-opacity="0.85" stroke-width="1.4"/>
+                <line x1="200" y1="70" x2="200" y2="330" stroke="#E4B756" stroke-opacity="0.55" stroke-width="0.9"/>
+                <line x1="70" y1="200" x2="330" y2="200" stroke="#E4B756" stroke-opacity="0.55" stroke-width="0.9"/>
+                <rect x="176" y="176" width="48" height="48" stroke="#E4B756" stroke-opacity="0.45" stroke-width="0.9"/>
+                <text x="200" y="205" text-anchor="middle" class="alg-lab">5</text>
               </g>
               <g class="alg-drift" id="alg-drift">
-                <rect x="70" y="70" width="260" height="260" stroke="#222222" stroke-opacity="0.55" stroke-width="1.25"/>
-                <line x1="200" y1="70" x2="200" y2="330" stroke="#222222" stroke-opacity="0.35" stroke-width="0.75"/>
-                <line x1="70" y1="200" x2="330" y2="200" stroke="#222222" stroke-opacity="0.35" stroke-width="0.75"/>
+                <rect x="70" y="70" width="260" height="260" stroke="#F5E7C5" stroke-opacity="0.55" stroke-width="1.4"/>
+                <line x1="200" y1="70" x2="200" y2="330" stroke="#F5E7C5" stroke-opacity="0.4" stroke-width="0.9"/>
+                <line x1="70" y1="200" x2="330" y2="200" stroke="#F5E7C5" stroke-opacity="0.4" stroke-width="0.9"/>
               </g>
               <g class="alg-goldline" id="alg-goldline">
-                <line x1="70" y1="200" x2="330" y2="200" stroke="#C79A3B" stroke-width="1.5"/>
+                <line x1="70" y1="200" x2="330" y2="200" stroke="#E4B756" stroke-width="2"/>
               </g>
             </svg>
           </figure>
@@ -462,68 +520,164 @@
       </ul>
     </section>
 
+    <!-- ──────────────── mantra band ──────────────── -->
+    <div class="mantra" aria-hidden="true">
+      <div class="mantra__track">
+        <span>दिशा बदलो · दशा बदलेगी</span><i>◆</i>
+        <span>Vastu without demolition</span><i>◆</i>
+        <span>अंक · दिशा · प्रकाश</span><i>◆</i>
+        <span>Alignment creates better living</span><i>◆</i>
+        <span>दिशा बदलो · दशा बदलेगी</span><i>◆</i>
+        <span>Vastu without demolition</span><i>◆</i>
+        <span>अंक · दिशा · प्रकाश</span><i>◆</i>
+        <span>Alignment creates better living</span><i>◆</i>
+      </div>
+    </div>
+
     <!-- ──────────────── 07 · THE DISCIPLINE ──────────────── -->
     <section class="scene directions" id="directions">
       <header class="scene-head" data-reveal>
         <span class="scene-head__no">05</span>
         <h2 class="scene-head__title">Eight directions.<br/>One geometry.</h2>
-        <p class="scene-head__lede">The directions are not superstition — they are the structure of a day. A home is only the choreography of these eight.</p>
+        <p class="scene-head__lede">North is at the top — and everything turns from there, clockwise. The directions are not superstition; they are the structure of a day.</p>
       </header>
 
       <div class="directions__stage" data-reveal>
-        <figure class="compass" aria-label="A diagram of the eight directions around a square">
-          <svg viewBox="0 0 400 400" fill="none">
-            <g class="draw" data-draw>
-              <rect x="60" y="60" width="280" height="280" stroke="#0F3D2E" stroke-opacity="0.4" stroke-width="1"/>
-              <line x1="153.3" y1="60" x2="153.3" y2="340" stroke="#0F3D2E" stroke-opacity="0.13" stroke-width="0.6"/>
-              <line x1="246.7" y1="60" x2="246.7" y2="340" stroke="#0F3D2E" stroke-opacity="0.13" stroke-width="0.6"/>
-              <line x1="60" y1="153.3" x2="340" y2="153.3" stroke="#0F3D2E" stroke-opacity="0.13" stroke-width="0.6"/>
-              <line x1="60" y1="246.7" x2="340" y2="246.7" stroke="#0F3D2E" stroke-opacity="0.13" stroke-width="0.6"/>
-              <line x1="200" y1="60" x2="200" y2="340" stroke="#0F3D2E" stroke-opacity="0.18" stroke-width="0.75"/>
-              <line x1="60" y1="200" x2="340" y2="200" stroke="#0F3D2E" stroke-opacity="0.18" stroke-width="0.75"/>
-              <line x1="60" y1="60" x2="340" y2="340" stroke="#C79A3B" stroke-opacity="0.4" stroke-width="0.6"/>
-              <line x1="340" y1="60" x2="60" y2="340" stroke="#C79A3B" stroke-opacity="0.4" stroke-width="0.6"/>
+        <figure class="compass" aria-label="A compass of the eight directions, north at the top">
+          <svg viewBox="0 0 440 440" fill="none">
+            <g class="compass__rings">
+              <circle cx="220" cy="220" r="192" class="ring-line"/>
+              <circle cx="220" cy="220" r="178" class="ring-ticks"/>
             </g>
-            <g class="compass__ticks" data-draw>
-              <polygon points="196,24 204,24 200,8" stroke="#C79A3B" stroke-width="1.25"/>
-              <line x1="200" y1="60" x2="200" y2="78" stroke="#C79A3B" stroke-width="1.25"/>
-              <line x1="200" y1="322" x2="200" y2="340" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="60" y1="200" x2="78" y2="200" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="322" y1="200" x2="340" y2="200" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="60" y1="60" x2="72" y2="72" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="328" y1="60" x2="340" y2="72" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="60" y1="328" x2="72" y2="340" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
-              <line x1="328" y1="328" x2="340" y2="340" stroke="#0F3D2E" stroke-opacity="0.55" stroke-width="1.25"/>
+
+            <g class="compass__sectors">
+              <path class="sector" data-dir="N"  style="--c:#1B6B7A" d="M175.36 104.31 L158.08 59.53 A172 172 0 0 1 281.92 59.53 L264.64 104.31 A124 124 0 0 0 175.36 104.31 Z" />
+              <path class="sector" data-dir="NE" style="--c:#46A0B4" d="M270.24 106.63 L289.68 62.75 A172 172 0 0 1 377.25 150.32 L333.37 169.76 A124 124 0 0 0 270.24 106.63 Z" />
+              <path class="sector" data-dir="E"  style="--c:#C79A3B" d="M335.69 175.36 L380.47 158.08 A172 172 0 0 1 380.47 281.92 L335.69 264.64 A124 124 0 0 0 335.69 175.36 Z" />
+              <path class="sector" data-dir="SE" style="--c:#C0532B" d="M333.37 270.24 L377.25 289.68 A172 172 0 0 1 289.68 377.25 L270.24 333.37 A124 124 0 0 0 333.37 270.24 Z" />
+              <path class="sector" data-dir="S"  style="--c:#8A5E33" d="M264.64 335.69 L281.92 380.47 A172 172 0 0 1 158.08 380.47 L175.36 335.69 A124 124 0 0 0 264.64 335.69 Z" />
+              <path class="sector" data-dir="SW" style="--c:#6A4530" d="M169.76 333.37 L150.32 377.25 A172 172 0 0 1 62.75 289.68 L106.63 270.24 A124 124 0 0 0 169.76 333.37 Z" />
+              <path class="sector" data-dir="W"  style="--c:#4A3E6E" d="M104.31 264.64 L59.53 281.92 A172 172 0 0 1 59.53 158.08 L104.31 175.36 A124 124 0 0 0 104.31 264.64 Z" />
+              <path class="sector" data-dir="NW" style="--c:#77889A" d="M106.63 169.76 L62.75 150.32 A172 172 0 0 1 150.32 62.75 L169.76 106.63 A124 124 0 0 0 106.63 169.76 Z" />
             </g>
-            <g class="flow">
-              <path d="M60 72 L328 340" stroke="#C79A3B" stroke-opacity="0.5" stroke-width="0.75"/>
-              <path d="M72 60 L340 328" stroke="#C79A3B" stroke-opacity="0.35" stroke-width="0.75"/>
+
+            <g class="compass__els">
+              <text x="220" y="75" class="sector-el" style="--c:#1B6B7A" data-dir="N">WATER</text>
+              <text x="324.6" y="118.4" class="sector-el" style="--c:#46A0B4" data-dir="NE">WATER</text>
+              <text x="368" y="223" class="sector-el" style="--c:#C79A3B" data-dir="E">SUN</text>
+              <text x="324.6" y="327.6" class="sector-el" style="--c:#C0532B" data-dir="SE">FIRE</text>
+              <text x="220" y="371" class="sector-el" style="--c:#8A5E33" data-dir="S">EARTH</text>
+              <text x="115.4" y="327.6" class="sector-el" style="--c:#6A4530" data-dir="SW">EARTH</text>
+              <text x="72" y="223" class="sector-el" style="--c:#4A3E6E" data-dir="W">SPACE</text>
+              <text x="115.4" y="118.4" class="sector-el" style="--c:#77889A" data-dir="NW">AIR</text>
             </g>
-            <g class="compass__labels" data-draw>
-              <text x="200" y="52" text-anchor="middle" class="c-lab c-lab--gold">N</text>
-              <text x="200" y="380" text-anchor="middle" class="c-lab">S</text>
-              <text x="44" y="204" text-anchor="middle" class="c-lab">W</text>
-              <text x="356" y="204" text-anchor="middle" class="c-lab">E</text>
-              <text x="52" y="56" text-anchor="middle" class="c-lab c-lab--gold">NE</text>
-              <text x="348" y="56" text-anchor="middle" class="c-lab c-lab--gold">SE</text>
-              <text x="52" y="376" text-anchor="middle" class="c-lab c-lab--gold">SW</text>
-              <text x="348" y="376" text-anchor="middle" class="c-lab c-lab--gold">NW</text>
+
+            <g class="compass__ticks">
+              <line x1="220" y1="44" x2="220" y2="32" class="tick tick--n"/>
+              <line x1="344.45" y1="95.55" x2="352.94" y2="87.06"/>
+              <line x1="396" y1="220" x2="408" y2="220"/>
+              <line x1="344.45" y1="344.45" x2="352.94" y2="352.94"/>
+              <line x1="220" y1="396" x2="220" y2="408"/>
+              <line x1="95.55" y1="344.45" x2="87.06" y2="352.94"/>
+              <line x1="44" y1="220" x2="32" y2="220"/>
+              <line x1="95.55" y1="95.55" x2="87.06" y2="87.06"/>
+            </g>
+
+            <g class="compass__plan">
+              <rect x="140" y="140" width="160" height="160" class="plan-edge"/>
+              <line x1="193.33" y1="140" x2="193.33" y2="300"/>
+              <line x1="246.67" y1="140" x2="246.67" y2="300"/>
+              <line x1="140" y1="193.33" x2="300" y2="193.33"/>
+              <line x1="140" y1="246.67" x2="300" y2="246.67"/>
+              <line x1="220" y1="140" x2="220" y2="300" class="axis"/>
+              <line x1="140" y1="220" x2="300" y2="220" class="axis"/>
+              <line x1="140" y1="140" x2="300" y2="300" class="diag"/>
+              <line x1="300" y1="140" x2="140" y2="300" class="diag"/>
+              <rect x="202" y="202" width="36" height="36" class="brahmasthan"/>
+              <circle cx="220" cy="220" r="2.4" class="brahmasthan-dot"/>
+            </g>
+
+            <g class="compass__north">
+              <path d="M220 49 L226.5 62.5 L213.5 62.5 Z" class="north-arrow"/>
+              <path d="M220 49 L226.5 62.5 L213.5 62.5 Z" class="north-arrow-glow"/>
+            </g>
+
+            <g class="compass__labels">
+              <text x="220" y="15" text-anchor="middle" class="c-lab c-lab--n" data-dir="N"  style="--c:#1B6B7A">N</text>
+              <text x="364.3" y="80" text-anchor="middle" class="c-lab c-lab--ord" data-dir="NE" style="--c:#46A0B4">NE</text>
+              <text x="424" y="225" text-anchor="middle" class="c-lab c-lab--card" data-dir="E"  style="--c:#C79A3B">E</text>
+              <text x="364.3" y="369" text-anchor="middle" class="c-lab c-lab--ord" data-dir="SE" style="--c:#C0532B">SE</text>
+              <text x="220" y="432" text-anchor="middle" class="c-lab c-lab--card" data-dir="S"  style="--c:#8A5E33">S</text>
+              <text x="75.7" y="369" text-anchor="middle" class="c-lab c-lab--ord" data-dir="SW" style="--c:#6A4530">SW</text>
+              <text x="16" y="225" text-anchor="middle" class="c-lab c-lab--card" data-dir="W"  style="--c:#4A3E6E">W</text>
+              <text x="75.7" y="80" text-anchor="middle" class="c-lab c-lab--ord" data-dir="NW" style="--c:#77889A">NW</text>
             </g>
           </svg>
         </figure>
 
         <div class="directions__info" role="region" aria-live="polite" aria-label="Direction readings">
-          <p class="directions__info-default">Touch a direction to read its character.</p>
-          <p class="directions__info-item" data-dir="N">North — the arrival of first light. Stillness, memory, beginnings. The direction from which the day is received.</p>
-          <p class="directions__info-item" data-dir="NE">North-East — the corner where light and water agree. Clarity. The most sensitive point of any plan.</p>
-          <p class="directions__info-item" data-dir="E">East — the day begins here. Movement, activity, the first decision of the morning.</p>
-          <p class="directions__info-item" data-dir="SE">South-East — warmth, fire, preparation. The direction of the kitchen and of appetite in every sense.</p>
-          <p class="directions__info-item" data-dir="S">South — noon, fullness, weight. The direction of sustained effort and of rest after it.</p>
-          <p class="directions__info-item" data-dir="SW">South-West — the weight of evening. Earth, stability, storage. The direction of the conclusion.</p>
-          <p class="directions__info-item" data-dir="W">West — the day hands itself over. Result, completion, the closing of matters.</p>
-          <p class="directions__info-item" data-dir="NW">North-West — the last light, the wind at night. Air, movement, travel, the direction of departure.</p>
+          <p class="directions__info-default is-active">Point at a segment of the wheel — or tap a chip below — to read that direction.</p>
+
+          <article class="directions__info-item" data-dir="N" style="--c:#1B6B7A">
+            <div class="dir__head"><span class="dir__de">उत्तर</span><span class="dir__en">North</span></div>
+            <div class="dir__meta"><span>Element · Water</span><span>Deity · Kubera</span><span>0°</span></div>
+            <p class="dir__text">The arrival of first light. Stillness, memory, beginnings — the direction from which the day is received, and wealth is invited in.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="NE" style="--c:#46A0B4">
+            <div class="dir__head"><span class="dir__de">ईशान</span><span class="dir__en">North-East</span></div>
+            <div class="dir__meta"><span>Element · Water</span><span>Deity · Ishan</span><span>45°</span></div>
+            <p class="dir__text">The corner where light and water agree. Clarity, wisdom, meditation — the most sensitive point of any plan. Keep it light, keep it open.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="E" style="--c:#C79A3B">
+            <div class="dir__head"><span class="dir__de">पूर्व</span><span class="dir__en">East</span></div>
+            <div class="dir__meta"><span>Element · Sun</span><span>Deity · Indra</span><span>90°</span></div>
+            <p class="dir__text">The day begins here. Movement, activity, the first decision of the morning — the direction of new opportunity and rising energy.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="SE" style="--c:#C0532B">
+            <div class="dir__head"><span class="dir__de">आग्नेय</span><span class="dir__en">South-East</span></div>
+            <div class="dir__meta"><span>Element · Fire</span><span>Deity · Agni</span><span>135°</span></div>
+            <p class="dir__text">Warmth, fire, preparation. The direction of the kitchen, of transformation — and of appetite in every sense of the word.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="S" style="--c:#8A5E33">
+            <div class="dir__head"><span class="dir__de">दक्षिण</span><span class="dir__en">South</span></div>
+            <div class="dir__meta"><span>Element · Earth</span><span>Deity · Yama</span><span>180°</span></div>
+            <p class="dir__text">Noon, fullness, weight. The direction of sustained effort, of reputation and of rest after work is done.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="SW" style="--c:#6A4530">
+            <div class="dir__head"><span class="dir__de">नैऋत्य</span><span class="dir__en">South-West</span></div>
+            <div class="dir__meta"><span>Element · Earth</span><span>Deity · Nairritti</span><span>225°</span></div>
+            <p class="dir__text">The weight of evening. Earth, stability, storage — the direction of relationships, sleep and the conclusion of matters.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="W" style="--c:#4A3E6E">
+            <div class="dir__head"><span class="dir__de">पश्चिम</span><span class="dir__en">West</span></div>
+            <div class="dir__meta"><span>Element · Space</span><span>Deity · Varuna</span><span>270°</span></div>
+            <p class="dir__text">The day hands itself over. Result, completion, gain — the closing of matters and the harvest of what was begun in the east.</p>
+          </article>
+
+          <article class="directions__info-item" data-dir="NW" style="--c:#77889A">
+            <div class="dir__head"><span class="dir__de">वायव्य</span><span class="dir__en">North-West</span></div>
+            <div class="dir__meta"><span>Element · Air</span><span>Deity · Vayu</span><span>315°</span></div>
+            <p class="dir__text">The last light, the wind at night. Air, movement, travel and the direction of departure — of guests, journeys and letting go.</p>
+          </article>
         </div>
       </div>
+
+      <ul class="dirchips" aria-label="Select a direction">
+        <li><button type="button" data-dir="N"  style="--c:#1B6B7A"><i>N</i><b>उत्तर</b></button></li>
+        <li><button type="button" data-dir="NE" style="--c:#46A0B4"><i>NE</i><b>ईशान</b></button></li>
+        <li><button type="button" data-dir="E"  style="--c:#C79A3B"><i>E</i><b>पूर्व</b></button></li>
+        <li><button type="button" data-dir="SE" style="--c:#C0532B"><i>SE</i><b>आग्नेय</b></button></li>
+        <li><button type="button" data-dir="S"  style="--c:#8A5E33"><i>S</i><b>दक्षिण</b></button></li>
+        <li><button type="button" data-dir="SW" style="--c:#6A4530"><i>SW</i><b>नैऋत्य</b></button></li>
+        <li><button type="button" data-dir="W"  style="--c:#4A3E6E"><i>W</i><b>पश्चिम</b></button></li>
+        <li><button type="button" data-dir="NW" style="--c:#77889A"><i>NW</i><b>वायव्य</b></button></li>
+      </ul>
     </section>
 
     <!-- ──────────────── 08 · NUMEROLOGY ──────────────── -->
@@ -631,10 +785,39 @@
       <p class="invitation__sub" data-reveal>Every project begins the same way — a space, a question, and a conversation about how life happens inside it. Available in person and remotely, worldwide. We reply within a day.</p>
       <a class="invitation__mail" data-reveal href="mailto:hello@runggvastu.com">hello@runggvastu.com</a>
 
+      <div class="invitation__grid" data-reveal>
+        <div class="invitation__col">
+          <h3>Rooms</h3>
+          <a href="#premise">Philosophy</a>
+          <a href="#founder">Founder</a>
+          <a href="#wd">The Difference</a>
+          <a href="#services">Services</a>
+        </div>
+        <div class="invitation__col">
+          <h3>Study</h3>
+          <a href="#directions">Eight Directions</a>
+          <a href="#number">Numbers</a>
+          <a href="#process">Process</a>
+          <a href="#testimonials">Stories</a>
+        </div>
+        <div class="invitation__col">
+          <h3>Practice</h3>
+          <span>Residential · Commercial</span>
+          <span>Industrial Vastu</span>
+          <span>Numerology · Tarot</span>
+          <span>In person &amp; remote</span>
+        </div>
+        <div class="invitation__col invitation__col--cta">
+          <h3>Begin</h3>
+          <a class="btn btn--gold" href="mailto:hello@runggvastu.com">Write to us</a>
+          <p>Replies within one working day.</p>
+        </div>
+      </div>
+
       <div class="invitation__foot">
         <span>RUNGG VASTU</span>
         <span>Dinnna N. Satra</span>
-        <span>Disha Badlo. Dasha Badlegi.</span>
+        <span>दिशा बदलो · दशा बदलेगी</span>
         <span>© 2026</span>
       </div>
     </div>

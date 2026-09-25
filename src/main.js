@@ -5,6 +5,8 @@
 
 import "./style.css";
 
+document.documentElement.classList.add("js");
+
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const smoothstep = (p) => p * p * (3 - 2 * p);
@@ -113,6 +115,7 @@ if (!reduceMotion) {
 
 const heroFigure = document.querySelector(".hero__figure");
 const nav = document.getElementById("nav");
+const progressBar = document.getElementById("progress-bar");
 const navLinks = [...document.querySelectorAll(".nav__links a")];
 
 const sectionMap = new Map(
@@ -131,6 +134,9 @@ function onScroll() {
   const vh = window.innerHeight;
 
   nav.classList.toggle("is-scrolled", y > 48);
+
+  const max = document.documentElement.scrollHeight - vh;
+  if (progressBar) progressBar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
 
   if (!reduceMotion && heroFigure) {
     heroFigure.style.setProperty("--par", `${y * 0.08}px`);
@@ -164,38 +170,104 @@ window.addEventListener("scroll", () => {
 });
 onScroll();
 
-/* ---------- compass readings ---------- */
+/* ---------- compass readings — north is up ---------- */
 
-const dirs = ["N", "S", "W", "E", "NE", "SE", "SW", "NW"];
-const tickEls = document.querySelectorAll(".compass__ticks line");
-const labelEls = document.querySelectorAll(".compass__labels text");
 const infoItems = [...document.querySelectorAll(".directions__info-item")];
 const infoDefault = document.querySelector(".directions__info-default");
+const dirTargets = [...document.querySelectorAll(".compass [data-dir]:not(.sector-el), .dirchips [data-dir]")];
+const dirMarks = [...document.querySelectorAll(".compass [data-dir]")];
+let pinned = null;
 
-function setInfo(dir) {
+function paint(dir) {
+  dirMarks.forEach((el) => el.classList.toggle("is-active", el.dataset.dir === dir));
+  document.querySelectorAll(".dirchips [data-dir]").forEach((el) => el.classList.toggle("is-active", el.dataset.dir === dir));
   infoItems.forEach((el) => el.classList.toggle("is-active", el.dataset.dir === dir));
-  infoDefault.classList.remove("is-active");
-}
-function clearInfo() {
-  infoItems.forEach((el) => el.classList.remove("is-active"));
-  infoDefault.classList.add("is-active");
+  if (infoDefault) infoDefault.classList.toggle("is-active", !dir);
 }
 
-const wire = (el, dir) => {
+function wireDirection(el) {
   el.setAttribute("tabindex", "0");
-  el.setAttribute("role", "button");
-  el.setAttribute("aria-label", dir);
-  el.addEventListener("mouseenter", () => setInfo(dir));
-  el.addEventListener("mouseleave", clearInfo);
-  el.addEventListener("focus", () => setInfo(dir));
-  el.addEventListener("blur", clearInfo);
-  el.addEventListener("click", () => setInfo(dir));
-};
-tickEls.forEach((el, i) => wire(el, dirs[i]));
-labelEls.forEach((el) => wire(el, el.textContent));
+  if (!el.hasAttribute("role")) el.setAttribute("role", "button");
+  el.setAttribute("aria-label", `Direction ${el.dataset.dir}`);
+  const dir = el.dataset.dir;
+  el.addEventListener("mouseenter", () => paint(dir));
+  el.addEventListener("mouseleave", () => paint(pinned));
+  el.addEventListener("focus", () => paint(dir));
+  el.addEventListener("blur", () => paint(pinned));
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+    pinned = pinned === dir ? null : dir;
+    paint(pinned);
+  });
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      pinned = pinned === dir ? null : dir;
+      paint(pinned);
+    }
+  });
+}
+
+dirTargets.forEach(wireDirection);
+paint(null);
+
 document.addEventListener("click", (e) => {
-  if (!e.target.closest(".compass")) clearInfo();
+  if (e.target.closest("[data-dir]")) return;
+  pinned = null;
+  paint(null);
 });
+
+/* ---------- the numbers, counting up ---------- */
+
+const counters = [...document.querySelectorAll("[data-count]")];
+if (counters.length && !reduceMotion) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || "";
+        const start = performance.now();
+        const dur = 1500;
+        const step = (now) => {
+          const p = clamp((now - start) / dur, 0, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          el.textContent = `${Math.round(target * e)}${suffix}`;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      }
+    },
+    { threshold: 0.6 }
+  );
+  counters.forEach((el) => io.observe(el));
+}
+
+/* ---------- the menu ---------- */
+
+const burger = document.getElementById("nav-burger");
+const sheet = document.getElementById("nav-sheet");
+
+function setMenu(open) {
+  if (!burger || !sheet) return;
+  burger.setAttribute("aria-expanded", String(open));
+  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  if (open) {
+    sheet.hidden = false;
+    requestAnimationFrame(() => sheet.classList.add("is-open"));
+    document.body.classList.add("is-locked");
+  } else {
+    sheet.classList.remove("is-open");
+    document.body.classList.remove("is-locked");
+    setTimeout(() => { if (!sheet.classList.contains("is-open")) sheet.hidden = true; }, 480);
+  }
+}
+
+burger?.addEventListener("click", () => setMenu(burger.getAttribute("aria-expanded") !== "true"));
+sheet?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
 /* ---------- the cursor — a quiet companion ---------- */
 
