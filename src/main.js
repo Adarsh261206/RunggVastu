@@ -307,3 +307,45 @@ if (window.matchMedia("(pointer: fine)").matches && !reduceMotion) {
     cursor.classList.add("is-on");
   });
 }
+
+/* ---------- WhatsApp — float + enquiry ---------- */
+
+const WA_NUMBER = "917715017571";
+const WA_DEFAULT =
+  "Namaste! I came across Rungg Vastu and would like to book a consultation. Kindly share the next steps.";
+const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+
+const fab = document.getElementById("wa-fab");
+if (fab) {
+  fab.href = waLink(WA_DEFAULT);
+  const toggleFab = () => fab.classList.toggle("is-on", window.scrollY > 260);
+  toggleFab();
+  window.addEventListener("scroll", toggleFab, { passive: true });
+}
+
+const enquiry = document.getElementById("enquiry");
+if (enquiry) {
+  const error = document.getElementById("enquiry-error");
+  enquiry.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(enquiry);
+    const name = String(data.get("name") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const service = String(data.get("service") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    if (!name || !phone) {
+      error.hidden = false;
+      return;
+    }
+    error.hidden = true;
+    const lines = [
+      "Namaste! New enquiry from runggvastu.com",
+      "",
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      service ? `About: ${service}` : null,
+      message ? `Message: ${message}` : null,
+    ].filter(Boolean);
+    window.open(waLink(lines.join("\n")), "_blank", "noopener");
+  });
+}
