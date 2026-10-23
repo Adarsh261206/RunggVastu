@@ -591,9 +591,8 @@ img, svg { display: block; max-width: 100%; }
 
 .founder__portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 22%;
+  height: auto;
+  display: block;
   filter: contrast(1.03) saturate(0.96);
 }
 
