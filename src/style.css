@@ -593,7 +593,8 @@ img, svg { display: block; max-width: 100%; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
+  object-position: 50% 22%;
+  filter: contrast(1.03) saturate(0.96);
 }
 
 .founder__portrait figcaption {
