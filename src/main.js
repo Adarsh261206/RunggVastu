@@ -7,9 +7,17 @@ import "./style.css";
 
 document.documentElement.classList.add("js");
 
+/* ---------- the loader · a held breath ---------- */
+
+const finishLoader = () => window.__loaderDone?.();
+if (document.readyState === "complete") {
+  setTimeout(finishLoader, 700);
+} else {
+  window.addEventListener("load", () => setTimeout(finishLoader, 700));
+}
+
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-const smoothstep = (p) => p * p * (3 - 2 * p);
 
 /* ---------- word-mask headings ---------- */
 
@@ -19,32 +27,6 @@ document.querySelectorAll("[data-split]").forEach((el) => {
     .map((w) => `<span class="w"><span class="wi">${w}</span></span>`)
     .join(" ");
 });
-
-/* ---------- the hero plan — a house that draws itself ---------- */
-
-const hero = document.querySelector(".hero");
-const heroPlan = hero?.querySelector(".hero__day");
-
-if (heroPlan && !reduceMotion) {
-  const draws = heroPlan.querySelectorAll(".plan-draw");
-  draws.forEach((g) => {
-    g.querySelectorAll("path, line, rect, circle, polygon").forEach((el) => {
-      el.setAttribute("pathLength", "1");
-      el.setAttribute("stroke-dasharray", "1");
-      el.style.strokeDashoffset = "1";
-    });
-    const delay = parseFloat(g.dataset.delay || 0);
-    setTimeout(() => {
-      g.querySelectorAll("path, line, rect, circle, polygon").forEach((el) => {
-        el.style.transition = "stroke-dashoffset 1.9s cubic-bezier(0.22, 1, 0.36, 1)";
-        el.style.strokeDashoffset = "0";
-      });
-    }, 400 + delay * 620);
-  });
-  setTimeout(() => hero.classList.add("is-ready"), 3300);
-} else {
-  hero?.classList.add("is-ready");
-}
 
 /* ---------- reveal on entering a room ---------- */
 
@@ -76,40 +58,6 @@ drawGroups.forEach((g) => {
   g.querySelectorAll("path, line, rect, circle").forEach((el) => el.setAttribute("pathLength", "1"));
   g.style.setProperty("--dp", reduceMotion ? 1 : 0);
 });
-
-/* ---------- the gesture · alignment stage ---------- */
-
-const stage = document.getElementById("alignment-stage");
-const degreesEl = document.getElementById("alg-degrees");
-const statusEl = document.getElementById("alg-status");
-const START_DEG = 8.4;
-
-function tickAlignment() {
-  const rect = stage.getBoundingClientRect();
-  const vh = window.innerHeight;
-  const p = clamp((vh - rect.top) / (rect.height + vh * 0.45), 0, 1);
-  const e = smoothstep(p);
-  stage.style.setProperty("--e", e);
-  stage.style.setProperty("--tx", `${(1 - e) * 64}px`);
-  stage.style.setProperty("--ty", `${(1 - e) * 44}px`);
-  stage.style.setProperty("--rot", `${(1 - e) * 6}deg`);
-  degreesEl.textContent = `${(START_DEG * (1 - e)).toFixed(1)}°`;
-  const aligned = e > 0.985;
-  statusEl.textContent = aligned ? "in alignment" : "out of order";
-  statusEl.style.color = aligned ? "var(--emerald)" : "";
-}
-
-if (!reduceMotion) {
-  stage.style.setProperty("--e", 0);
-  tickAlignment();
-} else {
-  stage.style.setProperty("--e", 1);
-  stage.style.setProperty("--tx", "0px");
-  stage.style.setProperty("--ty", "0px");
-  stage.style.setProperty("--rot", "0deg");
-  degreesEl.textContent = "0.0°";
-  statusEl.textContent = "in alignment";
-}
 
 /* ---------- one scroll loop, calm and single ---------- */
 
@@ -155,8 +103,6 @@ function onScroll() {
       const p = clamp((vh - r.top) / (r.height + vh * 0.6), 0, 1);
       g.style.setProperty("--dp", p);
     });
-
-    tickAlignment();
   }
 
   ticking = false;
