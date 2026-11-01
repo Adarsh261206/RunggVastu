@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="RUNGG VASTU — Vastu without demolition" />
   <meta property="og:description" content="Premium Vastu, Industrial Vastu and Numerology consulting by Dinnna N. Satra. Practical alignment for homes, businesses and industries." />
-  <meta property="og:image" content="/images/hero.jpg" />
+  <meta property="og:image" content="/images/hero-home.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script>
     (function () {
@@ -113,39 +113,50 @@
       </div>
 
       <div class="hero__content">
-        <img class="hero__mark" src="/images/logo.png" alt="" width="256" height="256" data-reveal aria-hidden="true" />
-        <p class="hero__deva" data-reveal>वास्तु · अंक ज्योतिष · दिशा विज्ञान</p>
-        <p class="kicker" data-reveal>Premium Vastu · Industrial Vastu · Numerology</p>
-        <h1 class="hero__title" data-split>RUNGG VASTU</h1>
+        <p class="kicker" data-reveal>Vastu for Homes · Businesses · Industries</p>
+        <h1 class="hero__title" data-split>Make your space work for you.</h1>
         <p class="hero__tagline" data-reveal>दिशा बदलो · दशा बदलेगी</p>
-        <p class="hero__sub" data-reveal>Vastu for homes, businesses and industries — practical alignment, without demolition.</p>
-        <div class="hero__actions" data-reveal>
-          <a class="btn btn--gold" href="https://wa.me/917715017571?text=Namaste%21%20I%20came%20across%20Rungg%20Vastu%20and%20would%20like%20to%20book%20a%20consultation.%20Kindly%20share%20the%20next%20steps." target="_blank" rel="noopener">Book Consultation</a>
-          <a class="btn btn--line" href="#services">Explore Services</a>
+        <p class="hero__scenario-label" data-reveal>Choose your space</p>
+
+        <div class="hero__scenarios" role="group" aria-label="Choose your space" data-reveal>
+          <button class="scenario is-active" type="button" aria-pressed="true" data-scene="home">
+            <span class="scenario__no">01</span>
+            <span class="scenario__label">Your Home</span>
+            <span class="scenario__hint">Living · Family</span>
+          </button>
+          <button class="scenario" type="button" aria-pressed="false" data-scene="business">
+            <span class="scenario__no">02</span>
+            <span class="scenario__label">Your Business</span>
+            <span class="scenario__hint">Office · Retail</span>
+          </button>
+          <button class="scenario" type="button" aria-pressed="false" data-scene="industry">
+            <span class="scenario__no">03</span>
+            <span class="scenario__label">Your Industry</span>
+            <span class="scenario__hint">Plant · Warehouse</span>
+          </button>
         </div>
-        <ul class="hero__trust" data-reveal>
-          <li>15+ years</li>
-          <li>500+ consultations</li>
-          <li>Zero demolition</li>
-        </ul>
+
+        <p class="hero__scenario-copy" id="hero-copy" data-reveal>Entrances, kitchens and bedrooms aligned so the home works with the family inside it — without touching a wall.</p>
+
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--gold" href="https://wa.me/917715017571?text=Namaste%21%20I%20came%20across%20Rungg%20Vastu%20and%20would%20like%20to%20book%20a%20consultation.%20Kindly%20share%20the%20next%20steps." target="_blank" rel="noopener">Book a Consultation</a>
+          <a class="btn btn--line" href="#wd">See the Difference</a>
+        </div>
       </div>
 
-      <figure class="hero__figure" aria-hidden="true">
+      <figure class="hero__figure">
         <div class="hero__photo">
-          <img src="/images/hero.jpg" alt="" width="1200" height="1500" fetchpriority="high" />
+          <img class="is-active" data-scene="home" src="/images/hero-home.jpg" alt="A sunlit living room opening onto a garden" width="1200" height="1500" fetchpriority="high" />
+          <img data-scene="business" src="/images/hero-business.jpg" alt="A warm wood boardroom with a long meeting table" width="1200" height="1500" />
+          <img data-scene="industry" src="/images/hero-industry.jpg" alt="A clean, modern production line" width="1200" height="1500" />
           <span class="hero__photo-shade"></span>
           <span class="hero__north">N</span>
           <figcaption class="hero__photo-caption">
-            <span>Aligned interiors</span>
-            <strong>A Rungg residence</strong>
+            <span class="hero__photo-kicker" id="hero-kicker">01 · The Home</span>
+            <strong class="hero__photo-title" id="hero-caption">Aligned for living</strong>
           </figcaption>
         </div>
       </figure>
-
-      <a class="scroll-cue" href="#facts" aria-label="Begin">
-        <span class="scroll-cue__line"></span>
-        <span class="scroll-cue__label">Begin</span>
-      </a>
 
       <div class="facts" id="facts" aria-label="The studio in numbers">
         <div class="fact" data-reveal>

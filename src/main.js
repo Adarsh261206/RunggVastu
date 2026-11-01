@@ -28,6 +28,68 @@ document.querySelectorAll("[data-split]").forEach((el) => {
     .join(" ");
 });
 
+/* ---------- the hero · one space at a time ---------- */
+
+const hero = document.querySelector(".hero");
+const sceneButtons = [...document.querySelectorAll(".scenario")];
+const sceneImages = [...document.querySelectorAll(".hero__photo img")];
+const sceneCopy = document.getElementById("hero-copy");
+const sceneKicker = document.getElementById("hero-kicker");
+const sceneCaption = document.getElementById("hero-caption");
+
+const SCENES = {
+  home: {
+    copy: "Entrances, kitchens and bedrooms aligned so the home works with the family inside it — without touching a wall.",
+    kicker: "01 · The Home",
+    caption: "Aligned for living",
+  },
+  business: {
+    copy: "Cabins, counters and meeting rooms placed for clarity, decisions and revenue — inside the layout you already have.",
+    kicker: "02 · The Business",
+    caption: "Aligned for clarity",
+  },
+  industry: {
+    copy: "Machine placement, worker movement and production flow aligned — without stopping a single line.",
+    kicker: "03 · The Industry",
+    caption: "Aligned for output",
+  },
+};
+
+function setScene(name) {
+  if (!SCENES[name]) return;
+  hero.dataset.scene = name;
+  sceneButtons.forEach((btn) => {
+    const on = btn.dataset.scene === name;
+    btn.classList.toggle("is-active", on);
+    btn.setAttribute("aria-pressed", String(on));
+  });
+  sceneImages.forEach((img) => img.classList.toggle("is-active", img.dataset.scene === name));
+
+  const caption = sceneCaption?.closest(".hero__photo-caption");
+  sceneCopy?.classList.add("is-changing");
+  caption?.classList.add("is-changing");
+  clearTimeout(setScene.timer);
+  setScene.timer = setTimeout(() => {
+    if (sceneCopy) sceneCopy.textContent = SCENES[name].copy;
+    if (sceneKicker) sceneKicker.textContent = SCENES[name].kicker;
+    if (sceneCaption) sceneCaption.textContent = SCENES[name].caption;
+    sceneCopy?.classList.remove("is-changing");
+    caption?.classList.remove("is-changing");
+  }, 200);
+}
+
+sceneButtons.forEach((btn, i) => {
+  btn.addEventListener("click", () => setScene(btn.dataset.scene));
+  btn.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    const step = e.key === "ArrowRight" ? 1 : -1;
+    const next = (i + step + sceneButtons.length) % sceneButtons.length;
+    sceneButtons[next].focus();
+    setScene(sceneButtons[next].dataset.scene);
+  });
+});
+
 /* ---------- reveal on entering a room ---------- */
 
 const revealObserver = new IntersectionObserver(
@@ -61,7 +123,6 @@ drawGroups.forEach((g) => {
 
 /* ---------- one scroll loop, calm and single ---------- */
 
-const heroFigure = document.querySelector(".hero__figure");
 const nav = document.getElementById("nav");
 const progressBar = document.getElementById("progress-bar");
 const navLinks = [...document.querySelectorAll(".nav__links a")];
@@ -85,10 +146,6 @@ function onScroll() {
 
   const max = document.documentElement.scrollHeight - vh;
   if (progressBar) progressBar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-
-  if (!reduceMotion && heroFigure) {
-    heroFigure.style.setProperty("--par", `${y * 0.08}px`);
-  }
 
   if (!reduceMotion) {
     let current = null;
